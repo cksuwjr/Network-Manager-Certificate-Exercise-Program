@@ -1,0 +1,20 @@
+Router
++ROUTER2의 호스트 이름을 ICQA로 설정 후 저장
+en
+conf t
+hostname ICQA
+exit
+copy r s
+
++A
+sad
+asd
+asd
+
++V
+asd
+fsa
+af
+
+
+

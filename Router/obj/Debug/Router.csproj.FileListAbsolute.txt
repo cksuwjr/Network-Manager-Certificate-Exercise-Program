@@ -1,0 +1,7 @@
+C:\Users\cksuw\source\repos\Router\Router\bin\Debug\Router.exe.config
+C:\Users\cksuw\source\repos\Router\Router\bin\Debug\Router.exe
+C:\Users\cksuw\source\repos\Router\Router\bin\Debug\Router.pdb
+C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.csproj.AssemblyReference.cache
+C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.csproj.CoreCompileInputs.cache
+C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.exe
+C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.pdb
