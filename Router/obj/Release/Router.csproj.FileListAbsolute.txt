@@ -1,0 +1,13 @@
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\Router.exe.config
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\Router.exe
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\Router.pdb
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.csproj.CoreCompileInputs.cache
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.exe
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.pdb
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.csproj.AssemblyReference.cache
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\Router.exe.manifest
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\Router.application
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.exe.manifest
+C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.application
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\textfile\routerpro.txt
+C:\Users\cksuw\source\repos\Router\Router\bin\Release\textfile\rinuxshort.txt

@@ -18,79 +18,158 @@ namespace Router
 
 
             //StreamReader sr = new StreamReader("textfile/routerpro.txt");
-            string[] text = File.ReadAllLines(@"textfile\routerpro.txt");
-            
+
 
             string state; // 콘솔 상태
 
-            // 분류 찾기
-            int sequence;
-            for (sequence = 0; sequence < text.Length; sequence++)
+            string[] routerpro = File.ReadAllLines(@"textfile\routerpro.txt"); // 라우터 애뮬레이터 프로그램 문제
+            string[] rinuxshort = File.ReadAllLines(@"textfile\rinuxshort.txt"); // 리눅스 애뮬레이터 프로그램 문제
+
+
+            Console.WriteLine("네트워크 관리사2급 실기 연습 프로그램입니다.            제작자: 차경훈");
+            Console.WriteLine("학습하실 모듈을 선택해주세요.");
+            Console.WriteLine();
+            Console.WriteLine("1. 라우터 설정 애뮬레이터 (3문제 출제)");
+            Console.WriteLine("2. 리눅스 명령어 (2문제 출제)");
+            Console.WriteLine();
+
+            Console.Write("숫자 입력: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Clear();
+            switch (n)
             {
-                if (text[sequence] == "Router")
+                case 1:
+                    Console.WriteLine("라우터 설정 애뮬레이터를 고르셨습니다. 행운을 빌어요~\n\n");
+                    break;
+                case 2:
+                    Console.WriteLine("리눅스 명령어를 고르셨습니다. 행운을 빌어요~\n\n");
+                    break;
+                default:
+                    Console.WriteLine("에헤이! 야 야 그거 아니다 잘못 입력하셨네");
                     break;
             }
 
-            // 시작
-            while (sequence < text.Length)
+            switch (n)
             {
-                if (text[sequence] != "")
-                {
-                    // 문제 찾기
-                    if (text[sequence][0].ToString() == "+")
+                case 1:
+                    // 분류 찾기
+                    int sequence;
+                    for (sequence = 0; sequence < routerpro.Length; sequence++)
                     {
-                        string Problem = text[sequence++].Substring(1);
-                        Console.WriteLine(Problem + "  (채점은 숫자0을 입력해주세요.)");
+                        if (routerpro[sequence] == "Router")
+                            break;
+                    }
 
-                        string Correct = "";
-                        string Input = "";
 
-                        while (text[sequence] != "")
-                            Correct += text[sequence++] + "\n"; // 옳은 답안 기록
-
-                        // 구성요소 초기화
-                        Console.WriteLine();
-                        state = "Router> ";
-                        string answer = "";
-
-                        // 질의 시작
-                        while (true)
+                    // 시작
+                    while (sequence < routerpro.Length)
+                    {
+                        if (routerpro[sequence] != "")
                         {
-                            Pg.RouteConsole(ref state, ref answer, ref Input); // 라우터 콘솔 띄우기
-                            if (answer == "0") // 채점하기
+                            // 문제 찾기
+                            if (routerpro[sequence][0].ToString() == "+")
                             {
-                                Console.Clear();
+                                string Problem = routerpro[sequence++].Substring(1);
+                                Console.WriteLine(Problem + "  (채점은 숫자0을 입력해주세요.)");
 
-                                if (Input == Correct)
-                                    Console.WriteLine("정답입니다!");
+                                string Correct = "";
+                                string Input = "";
+
+                                while (routerpro[sequence] != "")
+                                    Correct += routerpro[sequence++] + "\n"; // 옳은 답안 기록
+
+                                // 구성요소 초기화
+                                Console.WriteLine();
+                                state = "Router> ";
+                                string answer = "";
+
+                                // 질의 시작
+                                while (true)
+                                {
+                                    Pg.RouteConsole(ref state, ref answer, ref Input); // 라우터 콘솔 띄우기
+                                    if (answer == "0") // 채점하기
+                                    {
+                                        Console.Clear();
+
+                                        if (Input == Correct)
+                                            Console.WriteLine("정답입니다!");
+                                        else
+                                        {
+                                            Console.WriteLine("오답입니다!\n");
+
+                                            Console.WriteLine(Problem);
+                                            Console.WriteLine();
+                                            Console.WriteLine("입력값: ");
+                                            Console.WriteLine(Input);
+                                            Console.WriteLine();
+                                            Console.WriteLine("정답: ");
+                                            Console.WriteLine(Correct);
+                                            Console.WriteLine();
+
+                                            Input = "";
+                                            Correct = "";
+
+                                            Console.WriteLine("다음문제로 넘어가려면 엔터를 누르세요");
+                                            Console.ReadLine();
+                                            Console.Clear();
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        sequence++;
+
+                    }
+                    break;
+                case 2:
+                    // 분류 찾기
+                    int readseq;
+                    for (readseq = 0; readseq < rinuxshort.Length; readseq++)
+                    {
+                        if (rinuxshort[readseq].ToString() == "리눅스")
+                            break;
+                    }
+
+                    while (readseq < rinuxshort.Length)
+                    {
+                        if(rinuxshort[readseq] != "")
+                        {
+                            // 문제 찾기
+                            if (rinuxshort[readseq][0].ToString() == "+")
+                            {
+                                Console.WriteLine(rinuxshort[readseq].Substring(1));
+                                Console.WriteLine();
+                                Console.Write("정답 입력: ");
+                                string answer = Console.ReadLine();
+
+                                string correct = rinuxshort[readseq + 1];
+
+                                if (answer == correct)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("정답입니다!\n\n");
+                                }
                                 else
                                 {
-                                    Console.WriteLine("오답입니다!\n");
+                                    Console.Clear();
 
-                                    Console.WriteLine(Problem);
-                                    Console.WriteLine();
-                                    Console.WriteLine("입력값: ");
-                                        Console.WriteLine(Input);
-                                    Console.WriteLine();
-                                    Console.WriteLine("정답: ");
-                                        Console.WriteLine(Correct);
-                                    Console.WriteLine();
-
-                                    Input = "";
-                                    Correct = "";
-
-                                    Console.WriteLine("다음문제로 넘어가려면 엔터를 누르세요");
+                                    Console.WriteLine("틀렸습니다!\n\n");
+                                    Console.WriteLine(rinuxshort[readseq] + "\n");
+                                    Console.WriteLine("답: " + rinuxshort[readseq + 1]);
+                                    Console.WriteLine("엔터를 누르면 넘어갑니다.");
                                     Console.ReadLine();
                                     Console.Clear();
                                 }
-                                break;
                             }
                         }
+                        readseq++;
                     }
-                }
-                sequence++;
+                    break;
+                default:
+                    Console.WriteLine("ㅃㅃ ㅋㅋ");
+                    break;
             }
-
 
         }
         public void RouteConsole(ref string state, ref string answer, ref string Input)
@@ -234,6 +313,6 @@ namespace Router
 
 
 
-        
+
     }
 }
