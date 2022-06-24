@@ -17,8 +17,9 @@ namespace Router
             RouterProgram Pg = new RouterProgram();
 
 
-
-            string[] text = File.ReadAllLines(@"../../textfile\routerpro.txt");
+            //StreamReader sr = new StreamReader("textfile/routerpro.txt");
+            string[] text = File.ReadAllLines(@"textfile\routerpro.txt");
+            
 
             string state; // 콘솔 상태
 
@@ -39,7 +40,7 @@ namespace Router
                     if (text[sequence][0].ToString() == "+")
                     {
                         string Problem = text[sequence++].Substring(1);
-                        Console.WriteLine(Problem);
+                        Console.WriteLine(Problem + "  (채점은 숫자0을 입력해주세요.)");
 
                         string Correct = "";
                         string Input = "";
@@ -56,7 +57,7 @@ namespace Router
                         while (true)
                         {
                             Pg.RouteConsole(ref state, ref answer, ref Input); // 라우터 콘솔 띄우기
-                            if (answer == "채점") // 채점하기
+                            if (answer == "0") // 채점하기
                             {
                                 Console.Clear();
 
@@ -108,7 +109,7 @@ namespace Router
             }
             else if (state == "Router# ")
             {
-                if (answer == "conf t" || answer == "configure terminal")
+                if (answer == "conf t" || answer == "config terminal")
                 {
                     Console.WriteLine("Enter configuration commands, one per line. End with CNTL/Z");
                     state = "Router(config)# ";
@@ -119,36 +120,87 @@ namespace Router
                     string enter = Console.ReadLine();
                     Console.WriteLine("Building configuration...[OK]");
                 }
-                else
-                    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
+                else if (answer.Contains("line"))
+                {
+                    state = "Router(config-line)";
+                }
+                else if (answer == "show interface")
+                    Console.WriteLine("대충 인터페이스 띄워드렸읍니다~");
+                else if (answer == "show user")
+                    Console.WriteLine("대충~ 유저 정보 띄웠다는 글");
+                else if (answer == "show ip route")
+                    Console.WriteLine("대충~ 라우팅 테이블 정보 띄웠다는 글");
+                else if (answer == "show flash")
+                    Console.WriteLine("대충~ 플래쉬 내용 확인 띄웠다는 글");
+                else if (answer == "show process")
+                    Console.WriteLine("대충~ 프로세스 띄웠다는 글");
+
+                //else
+                //    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
             }
             else if (state == "Router(config)# ")
             {
-                if (answer == "hostname ICQA")
-                    state = "ICQA(config)# ";
-                else if (answer == "int fastethernet 0/0")
+                //if (answer == "hostname ICQA")
+                //    state = "ICQA(config)# ";
+                if (answer.Contains("hostname"))
+                {
+                    //Console.WriteLine(answer.Substring(answer.LastIndexOf("hostname") + 9));
+                    state = answer.Substring(answer.LastIndexOf("hostname") + 9) + "(config)# ";
+                }
+                //else if (answer == "int fastethernet 0/0")
+                else if (answer.Contains("int"))
                     state = "Router(config-if)# ";
-                else
-                    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
-            }
-            else if (state == "Router(config-if)# ")
-            {
-                if (answer == "exit")
-                    state = "Router(config)# ";
-                else
-                    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
-            }
-            else if (state == "ICQA(config)# " || state == "Router(config)# ")
-            {
-                if (answer == "exit")
+                else if (answer == "exit")
                 {
                     Console.WriteLine("\n\n%SYS-5-CONFIG_I: Configured from console by console");
-                    state = "ICQA# ";
+                    state = state.Substring(0, state.LastIndexOf("(config)#")) + "# ";
                 }
                 else
                     Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
             }
-            else if (state == "ICQA# ")
+            else if (state == "Router(config-if)# " || state == "Router(config-line)")
+            {
+                if (answer == "exit")
+                    state = "Router(config)# ";
+                //else if(answer.Contains("ip add"))
+                //{
+                //    //
+                //}
+                //else
+                //    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
+            }
+            //else if (state == "ICQA(config)# " || state == "Router(config)# ")
+            //{
+            //    if (answer == "exit")
+            //    {
+            //        Console.WriteLine("\n\n%SYS-5-CONFIG_I: Configured from console by console");
+            //        state = "ICQA# ";
+            //    }
+            //    else
+            //        Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
+            //}
+            else if (state.Contains("(config)#"))// == "ICQA(config)# " || state == "Router(config)# "
+            {
+                if (answer == "exit")
+                {
+                    Console.WriteLine("\n\n%SYS-5-CONFIG_I: Configured from console by console");
+                    state = state.Substring(0, state.LastIndexOf("(config)#")) + "# ";
+                }
+                else
+                    Console.WriteLine("% Invalid input detected ~ 비유효한 식별자입니다.");
+            }
+            //else if (state == "ICQA# ")
+            //{
+            //    if (answer == "copy r s")
+            //    {
+            //        Console.WriteLine("Destination filename [startup-config]?");
+            //        string enter = Console.ReadLine();
+            //        Console.WriteLine("Building configuration...[OK]");
+            //    }
+            //    else
+            //        Console.WriteLine("% Invalid input detected ~ (비유효한 식별자입니다.)");
+            //}
+            else if (state.Contains("# "))
             {
                 if (answer == "copy r s")
                 {
@@ -156,10 +208,14 @@ namespace Router
                     string enter = Console.ReadLine();
                     Console.WriteLine("Building configuration...[OK]");
                 }
+                else if (answer == "conf t" || answer == "config terminal")
+                {
+                    Console.WriteLine("Enter configuration commands, one per line. End with CNTL/Z");
+                    state = "Router(config)# ";
+                }
                 else
                     Console.WriteLine("% Invalid input detected ~ (비유효한 식별자입니다.)");
             }
-            
         }
 
 
@@ -178,22 +234,6 @@ namespace Router
 
 
 
-        public string Question(string Q, string Answer)
-        {
-            Console.Write(Q);
-            string answer = Console.ReadLine();
-
-            if ((Q == "Router> " && answer == "en") || (Q == "Router# " && answer == "conf t") || (Q == "Enter configuration commands, one per line. End with CNTL/Z.\nRouter(config)# " && answer == "hostname ICQA") || (Q == "ICQA(config)# " && answer == "exit") || (Q== "\n\n%SYS-5-CONFIG_I: Configured from console by console\nICQA# " && answer == "copy r s"))
-            {
-                Answer += answer;
-                Answer += "\n";
-                return Answer;
-            }
-            else
-            {
-                Console.WriteLine("% Unrecognized command");
-                return Question(Q, Answer);
-            }
-        }
+        
     }
 }

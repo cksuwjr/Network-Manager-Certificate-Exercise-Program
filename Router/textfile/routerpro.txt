@@ -14,7 +14,7 @@ copy r s
 en
 conf t
 int fastethernet 0/0
-add ip 192.168.0.100 255.255.255.0
+ip add 192.168.0.100 255.255.255.0
 exit
 exit
 copy r s
