@@ -9,3 +9,5 @@ C:\Users\cksuw\source\repos\Router\Router\bin\Debug\Router.exe.manifest
 C:\Users\cksuw\source\repos\Router\Router\bin\Debug\Router.application
 C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.exe.manifest
 C:\Users\cksuw\source\repos\Router\Router\obj\Debug\Router.application
+C:\Users\cksuw\source\repos\Router\Router\bin\Debug\textfile\rinuxshort.txt
+C:\Users\cksuw\source\repos\Router\Router\bin\Debug\textfile\routerpro.txt

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Router.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Router.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="another.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Router" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,17 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Router.exe" size="7648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Router.exe" size="126944">
       <assemblyIdentity name="Router" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R+KYSY6pWHmZgf35D84nGaJG2iGSFDf2zcdpbLa3WYs=</dsig:DigestValue>
+        <dsig:DigestValue>z8pTEOABxDqtSAycK3Z1/k/2o9JbBL1NzcMWNiEy7gA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="another.ico" size="116990">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8gYtfTfRnvvADIoT9o3+w4/ZqXZ+/ZmjAnIdlfZODew=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Router.exe.config" size="189">
     <hash>
       <dsig:Transforms>
@@ -60,6 +70,33 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="textfile\networkpro.txt" size="9306">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2QVQARUM0pIQ7b3nycp4ikxLIwL9UFXZ40WhZKxH3Sc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="textfile\rinuxshort.txt" size="1731">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tcV+4u9G9VFy4Ew8UMVl5+LXk6KE75Ag2JlnTLlhCj8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="textfile\routerpro.txt" size="3068">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gaMKrT67n2twzVbY2c/zwBCtvCJuIm8BjezKNGQLlNE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -39,7 +39,7 @@ copy r s
 
 +Ethernet 0의 description:ICQA 을 설정하고 저장
 en
-conf t 
+conf t
 int ethernet 0
 des ICQA
 exit
@@ -56,7 +56,7 @@ exit
 exit
 copy r s
 
-+Default-Gateway 를 설정 후 저장  ip:192.168.0.10
++기본게이트웨이 를 설정하시오.  ip:192.168.0.10
 en
 conf t
 ip default-gateway 192.168.0.10
@@ -97,7 +97,7 @@ copy r s
 +Router2의 Interface Serial 0 을 활성화 시키고 저장.
 en
 conf t
-int serial0
+int serial 0
 no shutdown
 exit
 exit
@@ -114,14 +114,58 @@ exit
 exit
 copy r s
 
++serial 2/0에  frame-relay방식으로 캡슐화
+en
+conf t
+int serial 2/0
+encapsulaiton frame-relay
+frame-relay interface-dlci 17
+copy r s
 
++인터페이스 정보를 확인하고 저장하시오
+en
+show interface
+copy r s
 
++접속한 사용자 정보를 확인하고 저장하시오
+en
+show user
+copy r s
 
++라우팅 테이블 정보를 확인하고 저장하시오
+en
+show ip route
+copy r s
 
++플래쉬 내용을 확인하고 저장하시오
+en
+show flash
+copy r s
 
++프로세스 정보를 확인하고 저장하시오
+en
+show process
+copy r s
 
++DHCP 네트워크를 192.168.100.0/24 서버이름은 icqa로 설정
+en
+conf t
+ip dhcp pool icqa
+network 192.168.100.0 255.255.255.0
+exit
+exit
+copy r s 
 
-
++hostname을 network2로 변경하고 console 0 의 password를 route5로 변경후 로그인하시오
+en
+conf t
+hostname network2
+line console 0
+password route5
+login
+exit
+exit
+copy r s
 
 
 

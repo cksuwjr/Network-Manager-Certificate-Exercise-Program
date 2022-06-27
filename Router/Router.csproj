@@ -21,11 +21,12 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>네트워크관리사 2급 실기 연습 프로그램</ProductName>
     <PublisherName>차경훈</PublisherName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.7</MinimumRequiredVersion>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="another.ico" />
+    <Content Include="textfile\networkpro.txt" />
     <Content Include="textfile\rinuxshort.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
