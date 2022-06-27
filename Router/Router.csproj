@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ProductName>라우터 연습 프로그램</ProductName>
+    <ProductName>네트워크관리사 2급 실기 연습 프로그램</ProductName>
     <PublisherName>차경훈</PublisherName>
     <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>

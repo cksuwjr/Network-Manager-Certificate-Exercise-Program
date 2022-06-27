@@ -25,152 +25,169 @@ namespace Router
             string[] routerpro = File.ReadAllLines(@"textfile\routerpro.txt"); // 라우터 애뮬레이터 프로그램 문제
             string[] rinuxshort = File.ReadAllLines(@"textfile\rinuxshort.txt"); // 리눅스 애뮬레이터 프로그램 문제
 
-
-            Console.WriteLine("네트워크 관리사2급 실기 연습 프로그램입니다.            제작자: 차경훈");
-            Console.WriteLine("학습하실 모듈을 선택해주세요.");
-            Console.WriteLine();
-            Console.WriteLine("1. 라우터 설정 애뮬레이터 (3문제 출제)");
-            Console.WriteLine("2. 리눅스 명령어 (2문제 출제)");
-            Console.WriteLine();
-
-            Console.Write("숫자 입력: ");
-            int n = int.Parse(Console.ReadLine());
-            Console.Clear();
-            switch (n)
+            while (true)
             {
-                case 1:
-                    Console.WriteLine("라우터 설정 애뮬레이터를 고르셨습니다. 행운을 빌어요~\n\n");
-                    break;
-                case 2:
-                    Console.WriteLine("리눅스 명령어를 고르셨습니다. 행운을 빌어요~\n\n");
-                    break;
-                default:
-                    Console.WriteLine("에헤이! 야 야 그거 아니다 잘못 입력하셨네");
-                    break;
-            }
+                Console.WriteLine("네트워크 관리사2급 실기 연습 프로그램입니다.            제작자: 차경훈");
+                Console.WriteLine("학습하실 모듈을 선택해주세요.");
+                Console.WriteLine();
+                Console.WriteLine("1. 라우터 설정 애뮬레이터 (3문제 출제)");
+                Console.WriteLine("2. 리눅스 명령어 (2문제 출제)");
+                Console.WriteLine("3. 종료");
+                Console.WriteLine();
 
-            switch (n)
-            {
-                case 1:
-                    // 분류 찾기
-                    int sequence;
-                    for (sequence = 0; sequence < routerpro.Length; sequence++)
-                    {
-                        if (routerpro[sequence] == "Router")
-                            break;
-                    }
+                Console.Write("숫자 입력: ");
+                string input = Console.ReadLine();
+                int n = 10000;
+                try
+                {
+                    n = int.Parse(input);
+                }
+                catch { }
 
+                Console.Clear();
+                switch (n)
+                {
+                    case 1:
+                        Console.WriteLine("라우터 설정 애뮬레이터를 고르셨습니다. 행운을 빌어요~\n\n");
+                        break;
+                    case 2:
+                        Console.WriteLine("리눅스 명령어를 고르셨습니다. 행운을 빌어요~\n\n");
+                        break;
+                    case 3:
+                        Console.WriteLine("프로그램을 종료합니다.");
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("에헤이! 야 야 그거 아니다 잘못 입력하셨네");
+                        break;
+                }
 
-                    // 시작
-                    while (sequence < routerpro.Length)
-                    {
-                        if (routerpro[sequence] != "")
+                switch (n)
+                {
+                    case 1:
+                        // 분류 찾기
+                        int sequence;
+                        for (sequence = 0; sequence < routerpro.Length; sequence++)
                         {
-                            // 문제 찾기
-                            if (routerpro[sequence][0].ToString() == "+")
+                            if (routerpro[sequence] == "Router")
+                                break;
+                        }
+
+
+                        // 시작
+                        while (sequence < routerpro.Length)
+                        {
+                            if (routerpro[sequence] != "")
                             {
-                                string Problem = routerpro[sequence++].Substring(1);
-                                Console.WriteLine(Problem + "  (채점은 숫자0을 입력해주세요.)");
-
-                                string Correct = "";
-                                string Input = "";
-
-                                while (routerpro[sequence] != "")
-                                    Correct += routerpro[sequence++] + "\n"; // 옳은 답안 기록
-
-                                // 구성요소 초기화
-                                Console.WriteLine();
-                                state = "Router> ";
-                                string answer = "";
-
-                                // 질의 시작
-                                while (true)
+                                // 문제 찾기
+                                if (routerpro[sequence][0].ToString() == "+")
                                 {
-                                    Pg.RouteConsole(ref state, ref answer, ref Input); // 라우터 콘솔 띄우기
-                                    if (answer == "0") // 채점하기
+                                    string Problem = routerpro[sequence++].Substring(1);
+                                    Console.WriteLine(Problem + "  (채점은 숫자0을 입력해주세요.)");
+
+                                    string Correct = "";
+                                    string Input = "";
+
+                                    while (routerpro[sequence] != "")
+                                        Correct += routerpro[sequence++] + "\n"; // 옳은 답안 기록
+
+                                    // 구성요소 초기화
+                                    Console.WriteLine();
+                                    state = "Router> ";
+                                    string answer = "";
+
+                                    // 질의 시작
+                                    while (true)
                                     {
-                                        Console.Clear();
-
-                                        if (Input == Correct)
-                                            Console.WriteLine("정답입니다!");
-                                        else
+                                        Pg.RouteConsole(ref state, ref answer, ref Input); // 라우터 콘솔 띄우기
+                                        if (answer == "0") // 채점하기
                                         {
-                                            Console.WriteLine("오답입니다!\n");
-
-                                            Console.WriteLine(Problem);
-                                            Console.WriteLine();
-                                            Console.WriteLine("입력값: ");
-                                            Console.WriteLine(Input);
-                                            Console.WriteLine();
-                                            Console.WriteLine("정답: ");
-                                            Console.WriteLine(Correct);
-                                            Console.WriteLine();
-
-                                            Input = "";
-                                            Correct = "";
-
-                                            Console.WriteLine("다음문제로 넘어가려면 엔터를 누르세요");
-                                            Console.ReadLine();
                                             Console.Clear();
+
+                                            if (Input == Correct)
+                                                Console.WriteLine("정답입니다!");
+                                            else
+                                            {
+                                                Console.WriteLine("오답입니다!\n");
+
+                                                Console.WriteLine(Problem);
+                                                Console.WriteLine();
+                                                Console.WriteLine("입력값: ");
+                                                Console.WriteLine(Input);
+                                                Console.WriteLine();
+                                                Console.WriteLine("정답: ");
+                                                Console.WriteLine(Correct);
+                                                Console.WriteLine();
+
+                                                Input = "";
+                                                Correct = "";
+
+                                                Console.WriteLine("다음문제로 넘어가려면 엔터를 누르세요");
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                            }
+                                            break;
                                         }
-                                        break;
                                     }
                                 }
                             }
+                            sequence++;
+
                         }
-                        sequence++;
-
-                    }
-                    break;
-                case 2:
-                    // 분류 찾기
-                    int readseq;
-                    for (readseq = 0; readseq < rinuxshort.Length; readseq++)
-                    {
-                        if (rinuxshort[readseq].ToString() == "리눅스")
-                            break;
-                    }
-
-                    while (readseq < rinuxshort.Length)
-                    {
-                        if(rinuxshort[readseq] != "")
+                        break;
+                    case 2:
+                        // 분류 찾기
+                        int readseq;
+                        for (readseq = 0; readseq < rinuxshort.Length; readseq++)
                         {
-                            // 문제 찾기
-                            if (rinuxshort[readseq][0].ToString() == "+")
+                            if (rinuxshort[readseq].ToString() == "리눅스")
+                                break;
+                        }
+
+                        while (readseq < rinuxshort.Length)
+                        {
+                            if (rinuxshort[readseq] != "")
                             {
-                                Console.WriteLine(rinuxshort[readseq].Substring(1));
-                                Console.WriteLine();
-                                Console.Write("정답 입력: ");
-                                string answer = Console.ReadLine();
-
-                                string correct = rinuxshort[readseq + 1];
-
-                                if (answer == correct)
+                                // 문제 찾기
+                                if (rinuxshort[readseq][0].ToString() == "+")
                                 {
-                                    Console.Clear();
-                                    Console.WriteLine("정답입니다!\n\n");
-                                }
-                                else
-                                {
-                                    Console.Clear();
+                                    Console.WriteLine(rinuxshort[readseq].Substring(1));
+                                    Console.WriteLine();
+                                    Console.Write("정답 입력: ");
+                                    string answer = Console.ReadLine();
 
-                                    Console.WriteLine("틀렸습니다!\n\n");
-                                    Console.WriteLine(rinuxshort[readseq] + "\n");
-                                    Console.WriteLine("답: " + rinuxshort[readseq + 1]);
-                                    Console.WriteLine("엔터를 누르면 넘어갑니다.");
-                                    Console.ReadLine();
-                                    Console.Clear();
+                                    string correct = rinuxshort[readseq + 1];
+
+                                    if (answer == correct)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("정답입니다!\n\n");
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+
+                                        Console.WriteLine("틀렸습니다!\n\n");
+                                        Console.WriteLine(rinuxshort[readseq] + "\n");
+                                        Console.WriteLine("답: " + rinuxshort[readseq + 1]);
+                                        Console.WriteLine("엔터를 누르면 넘어갑니다.");
+                                        Console.ReadLine();
+                                        Console.Clear();
+                                    }
                                 }
                             }
+                            readseq++;
                         }
-                        readseq++;
-                    }
-                    break;
-                default:
-                    Console.WriteLine("ㅃㅃ ㅋㅋ");
-                    break;
+                        break;
+                    default:
+                        Console.WriteLine("ㅃㅃ ㅋㅋ");
+                        break;
+                }
+                Console.WriteLine("문제가 모두 끝났습니다.");
+                Console.WriteLine("처음으로 돌아갑니다.");
+                Console.ReadLine();
+                Console.Clear();
             }
-
         }
         public void RouteConsole(ref string state, ref string answer, ref string Input)
         {
