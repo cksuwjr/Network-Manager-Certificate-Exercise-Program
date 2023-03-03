@@ -10,22 +10,22 @@
   <trustInfo>
     <security>
       <applicationRequestMinimum>
-        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
         <defaultAssemblyRequest permissionSetReference="Custom" />
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!--
-          UAC 매니페스트 옵션
-          Windows 사용자 계정 컨트롤 수준을 변경하려면 
-          requestedExecutionLevel 노드를 다음 중 하나로 바꾸세요.
+        <!-- UAC 매니페스트 옵션
+             Windows 사용자 계정 컨트롤 수준을 변경하려면 
+             requestedExecutionLevel 노드를 다음 중 하나로 바꿉니다.
 
-          <requestedExecutionLevel level="asInvoker" uiAccess="false" />
-          <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
-          <requestedExecutionLevel level="highestAvailable" uiAccess="false" />
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-          이전 버전과의 호환성을 위해 파일 및 레지스트리 가상화를 사용하려면 
-          requestedExecutionLevel 노드를 삭제하세요.
-    -->
+            requestedExecutionLevel 요소를 지정하면 파일 및 레지스트리 가상화를 사용하지 않습니다. 
+            이전 버전과의 호환성을 위해 애플리케이션에 가상화가 필요한 경우
+            이 요소를 제거합니다.
+        -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>I3lPr0yDqGNh4GEPs6j0BuNg3AOxBqqAjIU38dLOa68=</dsig:DigestValue>
+        <dsig:DigestValue>K7yBVnOJulEAJbVMnwRAYfT0N22e+H5q66ZTm0x5YV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -99,4 +99,21 @@
       <dsig:DigestValue>O3PiZHu/34llFCb2X5XkO+w3SnSAQhceq55/CUSsVwA=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=DESKTOP-HEH8FC1\cksuw" issuerKeyHash="99ad8c39cd01f9226f310ba06d1e42a495883a68" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>iS8yBJlErNVzX+aJvPjXPr2rGn4+D2sBcEm7VptOORc=</DigestValue></Reference></SignedInfo><SignatureValue>FQfe9S63tTaqzdqOdcr50uKLdnJq96nqnn+or+hvslWxN2zOopTZVpZXKZdonvULNg/mw33DU1P3HNSG6APmiNDlr5XAvU1nigSZbrogSlAw2s2DkWBKu75+wo5ShqhHgYWK+oLJbgMYsMVXy6zUhvM0M0DV7hoFQBIHl51+pH0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xLiVBlhRaw8iU6JRC2zhCAp3pCbHcNZvbWUjkrK6Lj/Igyz1jkoX3HMzE+piZQc+oOSnY3Ws2gZIFdPoxO1ZdQw7uyD1LRIAePLiAxseOhoEw5x19DzWUAEWdrQB9fyQcggWrGb81anKbB4mu0eVWjBR/DcpzYAN3pcRan5OoEU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="17394e9b56bb4970016b0f3e7e1aabbd3ed7f8bc89e65f73d5ac449904322f89" Description="" Url=""><as:assemblyIdentity name="Router.exe" version="1.0.0.8" publicKeyToken="ad7a569009f0913d" language="neutral" processorArchitecture="amd64" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-HEH8FC1\cksuw</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Qyrh2coLjm+DKCVwqzy/5f1U8a2J01td/P9CcPgEWm0=</DigestValue></Reference></SignedInfo><SignatureValue>F6+0swOgiBIc3cc7ALMNDa8wGQKo8CMF5TU9eldSaH9GvjCVykArdEJXxZmr59xqELZhBEVxY0UIf5s38e5IF0tnqXHt59RtJum1VbJy85Ji5mR+0TCqvbRZjfn4WksRXAhJAgvsceDVMi5CoQuh69Mvo6xKaMwetMbJey9MEVM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xLiVBlhRaw8iU6JRC2zhCAp3pCbHcNZvbWUjkrK6Lj/Igyz1jkoX3HMzE+piZQc+oOSnY3Ws2gZIFdPoxO1ZdQw7uyD1LRIAePLiAxseOhoEw5x19DzWUAEWdrQB9fyQcggWrGb81anKbB4mu0eVWjBR/DcpzYAN3pcRan5OoEU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQdNJq+1nnIqtDUe1IXur4rTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEgARQBIADgARgBDADEAXABjAGsAcwB1AHcwHhcNMjIwNjI0MDMzMjI4WhcNMjMwNjI0MDkzMjI4WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEgARQBIADgARgBDADEAXABjAGsAcwB1AHcwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMS4lQZYUWsPIlOiUQts4QgKd6Qmx3DWb21lI5Kyui4/yIMs9Y5KF9xzMxPqYmUHPqDkp2N1rNoGSBXT6MTtWXUMO7sg9S0SAHjy4gMbHjoaBMOcdfQ81lABFna0AfX8kHIIFqxm/NWpymweJrtHlVowUfw3Kc2ADd6XEWp+TqBFAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAe7aYP3EcQyjR4+7rGlu/HaBkX7dhbRuiDO5czUCFg66xEMwkP89Tch06wbTTZxddBCeCefPa3+VIS/rPCvPpSS21ICoPQ5Q9FyS1boY0WYY2quFVs6DDzON7eW5veX2OilG06KdB+7vjFA2d4/OAE/YV0mkM/pPDaXzJTfrYvT0=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- 이 애플리케이션이 테스트되고 함께 작동하도록 설계된 Windows 버전
+           목록입니다. 해당 요소의 주석 처리를 제거하면 Windows에서
+           호환 가능성이 가장 큰 환경을 자동으로 선택합니다. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-HEH8FC1\cksuw" issuerKeyHash="99ad8c39cd01f9226f310ba06d1e42a495883a68" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>FsrUA1j406CT2DjPSyUdFlLvmEPsxP/+t71UXVlAXB8=</DigestValue></Reference></SignedInfo><SignatureValue>ChPwl3hn2uYGUVn3VFwn6ICorFZal0ca3l5iFTlB/WLEMQ1Yg97/XEpcAMU8xCWP+Su3MuFPsELkZSQx2OvUHTgEPorDadbFDz+51x35j2QI6FL2+ddJCKoAztqZUKCDaENrRmnHaaiaE30TgNigzN2ws+bzqN5k7vlX6X46wxo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xLiVBlhRaw8iU6JRC2zhCAp3pCbHcNZvbWUjkrK6Lj/Igyz1jkoX3HMzE+piZQc+oOSnY3Ws2gZIFdPoxO1ZdQw7uyD1LRIAePLiAxseOhoEw5x19DzWUAEWdrQB9fyQcggWrGb81anKbB4mu0eVWjBR/DcpzYAN3pcRan5OoEU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="1f5c40595d54bdb7feffc4ec4398ef52161d254bcf38d893a0d3f85803d4ca16" Description="" Url=""><as:assemblyIdentity name="Router.exe" version="1.0.0.8" publicKeyToken="ad7a569009f0913d" language="neutral" processorArchitecture="amd64" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-HEH8FC1\cksuw</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vywhntxGSSL4kjnjy3w46zeIiqmOQsshkJKXuTj46nU=</DigestValue></Reference></SignedInfo><SignatureValue>uljiz3njk/H4cDSqDkECFXpcBptJN9HZ39HS5ULiSZNu3rPIEEAab99CkspOFCDv1h+K9DssJkn4wwV4Poe5gi31gP7K4+IKJrz2PAy2MH33k5OUnt5YXCb5r+s4Dzs1VO18/wgstudp8x961P0BWMJSgLXGhHN8yhdjlUhxauo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xLiVBlhRaw8iU6JRC2zhCAp3pCbHcNZvbWUjkrK6Lj/Igyz1jkoX3HMzE+piZQc+oOSnY3Ws2gZIFdPoxO1ZdQw7uyD1LRIAePLiAxseOhoEw5x19DzWUAEWdrQB9fyQcggWrGb81anKbB4mu0eVWjBR/DcpzYAN3pcRan5OoEU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQdNJq+1nnIqtDUe1IXur4rTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEgARQBIADgARgBDADEAXABjAGsAcwB1AHcwHhcNMjIwNjI0MDMzMjI4WhcNMjMwNjI0MDkzMjI4WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAEgARQBIADgARgBDADEAXABjAGsAcwB1AHcwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMS4lQZYUWsPIlOiUQts4QgKd6Qmx3DWb21lI5Kyui4/yIMs9Y5KF9xzMxPqYmUHPqDkp2N1rNoGSBXT6MTtWXUMO7sg9S0SAHjy4gMbHjoaBMOcdfQ81lABFna0AfX8kHIIFqxm/NWpymweJrtHlVowUfw3Kc2ADd6XEWp+TqBFAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAe7aYP3EcQyjR4+7rGlu/HaBkX7dhbRuiDO5czUCFg66xEMwkP89Tch06wbTTZxddBCeCefPa3+VIS/rPCvPpSS21ICoPQ5Q9FyS1boY0WYY2quFVs6DDzON7eW5veX2OilG06KdB+7vjFA2d4/OAE/YV0mkM/pPDaXzJTfrYvT0=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
