@@ -11,3 +11,17 @@ C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.exe.manifest
 C:\Users\cksuw\source\repos\Router\Router\obj\Release\Router.application
 C:\Users\cksuw\source\repos\Router\Router\bin\Release\textfile\routerpro.txt
 C:\Users\cksuw\source\repos\Router\Router\bin\Release\textfile\rinuxshort.txt
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\textfile\rinuxshort.txt
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\textfile\routerpro.txt
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\Router.exe.config
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\Router.exe.manifest
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\Router.application
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\Router.exe
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\bin\Release\Router.pdb
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.csproj.AssemblyReference.cache
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.csproj.CoreCompileInputs.cache
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.TrustInfo.xml
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.exe.manifest
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.application
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.exe
+C:\Users\cksuw\Desktop\g\Network-Manager-Certificate-Exercise-Program\Router\obj\Release\Router.pdb
